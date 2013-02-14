@@ -192,6 +192,7 @@ public enum LuaGrammar implements GrammarRuleKey {
         NUMBER,
         STRING,
         Punctuator.ELLIPSIS,
+        FUNCTION,
         TABLECONSTRUCTOR,
         FUNCTIONCALL,
         VAR,
