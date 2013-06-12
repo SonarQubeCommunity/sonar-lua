@@ -42,19 +42,17 @@
   <scm>
     <connection>scm:git:git@github.com:SonarCommunity/sonar-lua.git</connection>
     <developerConnection>scm:git:git@github.com:SonarCommunity/sonar-lua.git</developerConnection>
-    <url>https://github.com/SonarCommunity/sonar-java</url>
+    <url>https://github.com/SonarCommunity/sonar-lua</url>
     <tag>HEAD</tag>
   </scm>
-  <!--
   <issueManagement>
     <system>JIRA</system>
     <url>http://jira.codehaus.org/browse/SONARPLUGINS</url>
   </issueManagement>
   <ciManagement>
     <system>Cloudbees</system>
-    <url>https://sonarplugins.ci.cloudbees.com/job/java/</url>
+    <url>https://sonarplugins.ci.cloudbees.com/job/lua/</url>
   </ciManagement>
-  -->
 
   <properties>
     <license.title>Sonar Lua</license.title>
