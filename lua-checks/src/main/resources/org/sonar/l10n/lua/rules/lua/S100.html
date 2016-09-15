@@ -1,0 +1,21 @@
+<p>Shared naming conventions allow teams to collaborate efficiently. This rule checks that all function names match a provided regular expression.</p>
+
+<h2>Noncompliant Code Example</h2>
+
+<p>With default provided regular expression: ^[a-z][a-zA-Z0-9]*$</p>
+
+<pre>
+function Add (a,b)--NOK
+       print("foo", a)
+     
+     end
+</pre>
+
+<h2>Compliant Solution</h2>
+
+<pre>
+function add (a,b)--ok
+       print("foo", a)
+     
+     end
+</pre>

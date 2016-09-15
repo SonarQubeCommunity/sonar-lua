@@ -1,0 +1,26 @@
+<p>
+  Nested <code>if</code>, <code>for</code>, <code>while</code>, <code>do while</code> and <code>switch</code> statements is a key ingredient for making what's known as "Spaghetti code".
+</p>
+
+<p>
+  Such code is hard to read, refactor and therefore maintain.
+</p>
+
+<h2>Noncompliant Code Example</h2>
+<p>With the default threshold of 3:</p>
+<pre>
+  if op == "+" then
+      r = a + b
+    if op == "-" then
+      r = a - b
+    if op == "*" then
+      r = a*b
+    if op == "/" then--Noncompliant
+      r = a/b
+      end
+    else
+      error("invalid operation")
+    end
+end
+end
+</pre>
