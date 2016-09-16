@@ -48,21 +48,7 @@ public final class CheckList {
         TooManyReturnCheck.class,
         XPathCheck.class//not recognized
        );
- // TooManyLinesInFunctionCheck.class
-    //UnusedLocalVariableCheck.class,
-    //LocalVarShadowsFieldCheck.class,
-    //EmptyNestedTableCheck.class,
-   
-    //XPathCheck.class,
-    //OneStatementPerLineCheck.class,
-    //FunctionSinglePointOfExitCheck.class,
-    //*FieldNameCheck.class,
-    //*EmptyStatementCheck.class,
-
-    // *  CollapsibleIfStatementCheck.class,
-    //  *    ClassNameCheck.class,
-   //* ClassWithTooManyFunctionsCheck.class,
-    //*DynamicClassCheck.class,
+ 
 
        
   }
