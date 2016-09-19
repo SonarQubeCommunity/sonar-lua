@@ -2,4 +2,4 @@
 
 [![Build Status](https://travis-ci.org/SonarQubeCommunity/sonar-lua.svg?branch=master)](https://travis-ci.org/SonarQubeCommunity/sonar-lua)
 
-!https://travis-ci.org/SonarQubeCommunity/sonar-lua.svg?branch=master!:https://travis-ci.org/SonarQubeCommunity/sonar-lua
+
