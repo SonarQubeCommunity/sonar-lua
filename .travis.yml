@@ -1,18 +1,14 @@
+
 language: java
-sudo: false
 
 jdk:
   - oraclejdk8
 
-install: true
-script: ./travis.sh
+addons:
+  sonarqube: true
 
 cache:
   directories:
     - '$HOME/.m2/repository'
 
-notifications:
-  email: false
-  webhooks:
-  url:
-   on_start: always
+script: ./travis.sh
