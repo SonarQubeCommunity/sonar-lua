@@ -1,6 +1,6 @@
 /*
  * SonarQube Lua Plugin
- * Copyright (C) 2013-2016 SonarSource SA
+ * Copyright (C) 2016-2016 SonarSource SA
  * mailto:contact AT sonarsource DOT com
  *
  * This program is free software; you can redistribute it and/or
@@ -18,6 +18,8 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 package org.sonar.lua.checks.utils;
+
+
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
@@ -73,5 +75,4 @@ public final class Variable {
     }
     return identifiers;
   }
-
 }

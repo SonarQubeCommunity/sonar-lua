@@ -1,6 +1,6 @@
 /*
  * SonarQube Lua Plugin
- * Copyright (C) 2013-2016 SonarSource SA
+ * Copyright (C) 2016-2016 SonarSource SA
  * mailto:contact AT sonarsource DOT com
  *
  * This program is free software; you can redistribute it and/or
@@ -22,11 +22,13 @@ package org.sonar.lua.checks;
 import com.sonar.sslr.api.AstNode;
 //import com.sonar.sslr.api.Grammar;
 
+
 import org.sonar.check.Priority;
 import org.sonar.check.Rule;
 import org.sonar.lua.checks.Tags;
 import org.sonar.check.RuleProperty;
 import org.sonar.lua.api.LuaMetric;
+import org.sonar.squidbridge.annotations.ActivatedByDefault;
 import org.sonar.squidbridge.annotations.SqaleLinearWithOffsetRemediation;
 import org.sonar.squidbridge.api.SourceFile;
 import org.sonar.squidbridge.checks.ChecksHelper;
@@ -39,6 +41,7 @@ import org.sonar.sslr.parser.LexerlessGrammar;
     name = "Files should not be too complex",
     tags = Tags.BRAIN_OVERLOAD
 )
+@ActivatedByDefault
 @SqaleLinearWithOffsetRemediation(
     coeff = "1min",
     offset = "30min",

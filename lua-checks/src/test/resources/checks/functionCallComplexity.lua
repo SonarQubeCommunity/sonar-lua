@@ -47,7 +47,7 @@ add ({a,b},curRow[fi.id],print())--1
       
  
  
- lnlog.traceinfo({strsub(sqlStatement)},curRow[fi.id],curRow[fiid])--++2
+test.traceinfo({strsub(sqlStatement)},curRow[fi.id],curRow[fiid])--++2
  
  
  

@@ -1,6 +1,6 @@
 /*
  * SonarQube Lua Plugin
- * Copyright (C) 2013-2016 SonarSource SA
+ * Copyright (C) 2016-2016 SonarSource SA
  * mailto:contact AT sonarsource DOT com
  *
  * This program is free software; you can redistribute it and/or
@@ -23,6 +23,7 @@ import org.sonar.check.Priority;
 import org.sonar.lua.checks.Tags;
 import org.sonar.check.Rule;
 import org.sonar.check.RuleProperty;
+import org.sonar.squidbridge.annotations.ActivatedByDefault;
 import org.sonar.squidbridge.annotations.NoSqale;
 import org.sonar.squidbridge.annotations.RuleTemplate;
 import org.sonar.squidbridge.checks.AbstractCommentRegularExpressionCheck;
@@ -33,6 +34,7 @@ import org.sonar.sslr.parser.LexerlessGrammar;
   name = "Comments matching a regular expression should be handled",
   priority = Priority.MAJOR)
 @RuleTemplate
+@ActivatedByDefault
 @NoSqale
 public class CommentRegularExpressionCheck extends AbstractCommentRegularExpressionCheck<LexerlessGrammar> {
 

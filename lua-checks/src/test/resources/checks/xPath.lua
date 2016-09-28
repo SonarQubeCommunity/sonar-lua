@@ -1,4 +1,5 @@
-function sayHello() 
-  lmmmmmmmmmmmmmmmooooooooooong=a
-  alert("Hello World!");
+
+function ayHello() 
+  print"hello mmmmmmmmmmmmmmmmmmmmmmmmmmmmworld"
+ alert("Hello World!");
 end

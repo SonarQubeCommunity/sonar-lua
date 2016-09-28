@@ -1,6 +1,6 @@
 /*
  * SonarQube Lua Plugin
- * Copyright (C) 2013-2016 SonarSource SA
+ * Copyright (C) 2016-2016 SonarSource SA
  * mailto:contact AT sonarsource DOT com
  *
  * This program is free software; you can redistribute it and/or
@@ -43,7 +43,7 @@ import org.sonar.squidbridge.checks.ChecksHelper;
 @SqaleLinearWithOffsetRemediation(coeff = "1min", offset = "10min", effortToFixDescription = "per complexity point above the threshold")
 public class FunctionCallComplexityCheck extends LuaCheck {
 
-  private static final int DEFAULT_MAXIMUM_FUNCTIONCALL_COMPLEXITY_THRESHOLD = 10;
+  private static final int DEFAULT_MAXIMUM_FUNCTIONCALL_COMPLEXITY_THRESHOLD = 5;
 
   @RuleProperty(
     key = "maximumFunctionComplexityThreshold",

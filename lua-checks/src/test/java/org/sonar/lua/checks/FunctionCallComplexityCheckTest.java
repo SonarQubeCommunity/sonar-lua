@@ -1,6 +1,6 @@
 /*
  * SonarQube Lua Plugin
- * Copyright (C) 2013-2016 SonarSource SA
+ * Copyright (C) 2016-2016 SonarSource SA
  * mailto:contact AT sonarsource DOT com
  *
  * This program is free software; you can redistribute it and/or
@@ -38,7 +38,12 @@ public class FunctionCallComplexityCheckTest {
 
     CheckMessagesVerifier.verify(file.getCheckMessages())
        .next().atLine(1).withMessage("FunctionCall has a complexity of 11 which is greater than 1 authorized.")
-        
+       .next().atLine(9).withMessage("FunctionCall has a complexity of 2 which is greater than 1 authorized.")
+       .next().atLine(33).withMessage("FunctionCall has a complexity of 3 which is greater than 1 authorized.")
+       .next().atLine(43).withMessage("FunctionCall has a complexity of 2 which is greater than 1 authorized.")
+        .next().atLine(45).withMessage("FunctionCall has a complexity of 5 which is greater than 1 authorized.")
+        .next().atLine(50).withMessage("FunctionCall has a complexity of 7 which is greater than 1 authorized.")
+         
         .noMore();
   }
 

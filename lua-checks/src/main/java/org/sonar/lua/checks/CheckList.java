@@ -1,7 +1,7 @@
 /*
  * SonarQube Lua Plugin
- * Copyright (C) 2013-2016 SonarSource SA
- * mailto:Fati.Ahmadi66@gmail.com
+ * Copyright (C) 2016-2016 SonarSource SA
+ * mailto:contact AT sonarsource DOT com
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -35,21 +35,19 @@ public final class CheckList {
     return ImmutableList.<Class>of(
      
         CommentRegularExpressionCheck.class,
-        
-          FileComplexityCheck.class,//not recogniz4ed
+        FileComplexityCheck.class,
         FunctionComplexityCheck.class,
         FunctionCallComplexityCheck.class,
         FunctionWithTooManyParametersCheck.class,
         FunctionNameCheck.class,
         NestedControlFlowDepthCheck.class,
-       LineLengthCheck.class,//not recognized
-       TableComplexityCheck.class,
-      TableWithTooManyFieldsCheck.class,
+        LineLengthCheck.class,
+        TableComplexityCheck.class,
+        TableWithTooManyFieldsCheck.class,
         TooManyReturnCheck.class,
-        XPathCheck.class//not recognized
+        XPathCheck.class
        );
  
-
        
   }
 

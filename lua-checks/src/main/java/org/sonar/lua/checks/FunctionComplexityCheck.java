@@ -1,6 +1,6 @@
 /*
  * SonarQube Lua Plugin
- * Copyright (C) 2013-2016 SonarSource SA
+ * Copyright (C) 2016-2016 SonarSource SA
  * mailto:contact AT sonarsource DOT com
  *
  * This program is free software; you can redistribute it and/or
@@ -33,42 +33,46 @@ import org.sonar.squidbridge.annotations.SqaleLinearWithOffsetRemediation;
 import org.sonar.squidbridge.annotations.SqaleSubCharacteristic;
 import org.sonar.squidbridge.api.SourceFunction;
 import org.sonar.squidbridge.checks.ChecksHelper;
-@Rule(
-		  key = FunctionComplexityCheck.CHECK_KEY,
-		  name = "Functions should not be too complex",
-		  priority = Priority.MAJOR,
-		  tags = Tags.BRAIN_OVERLOAD)
-		@ActivatedByDefault
-		
-		@SqaleLinearWithOffsetRemediation(coeff = "1min", offset = "10min", effortToFixDescription = "per complexity point above the threshold")
-		public class FunctionComplexityCheck extends LuaCheck {
+
+@Rule(key = "FunctionComplexity",
+name = "Functions should not be too complex",
+priority = Priority.MAJOR, 
+tags = Tags.BRAIN_OVERLOAD)
+@ActivatedByDefault
+@SqaleLinearWithOffsetRemediation(coeff = "1min", offset = "10min", effortToFixDescription = "per complexity point above the threshold")
+public class FunctionComplexityCheck extends LuaCheck {
 	public static final String CHECK_KEY = "FunctionComplexity";
-		  private static final int DEFAULT_MAXIMUM_FUNCTION_COMPLEXITY_THRESHOLD = 10;
-         
-		  @RuleProperty(
-		    key = "maximumFunctionComplexityThreshold",
-		    description = "The maximum authorized complexity.",
-		    defaultValue = "" + DEFAULT_MAXIMUM_FUNCTION_COMPLEXITY_THRESHOLD)
-		  private int maximumFunctionComplexityThreshold = DEFAULT_MAXIMUM_FUNCTION_COMPLEXITY_THRESHOLD;
-  @Override
-  public void init() {
-    subscribeTo(LuaGrammar.FUNCTION,LuaGrammar.FUNCSTAT);
-    //subscribeTo(LuaGrammar.Keyword.FUNCTION);
-  }
+	private static final int DEFAULT_MAXIMUM_FUNCTION_COMPLEXITY_THRESHOLD = 10;
 
-  @Override
-  public void leaveNode(AstNode node) {
-    SourceFunction function = (SourceFunction) getContext().peekSourceCode();
-    //int functionComplexity = function.getInt(LuaMetric.COMPLEXITY);
-    int functionComplexity = ChecksHelper.getRecursiveMeasureInt(function, LuaMetric.COMPLEXITY);
-    if (functionComplexity > maximumFunctionComplexityThreshold) {
-      String message = String.format("Function has a complexity of %s which is greater than %s authorized.", functionComplexity, maximumFunctionComplexityThreshold);
-      createIssueWithCost(message, node, (double)functionComplexity - maximumFunctionComplexityThreshold);
-    }
-  }
+	@RuleProperty(key = "maximumFunctionComplexityThreshold", description = "The maximum authorized complexity.", defaultValue = ""
+			+ DEFAULT_MAXIMUM_FUNCTION_COMPLEXITY_THRESHOLD)
+	private int maximumFunctionComplexityThreshold = DEFAULT_MAXIMUM_FUNCTION_COMPLEXITY_THRESHOLD;
 
-  public void setMaximumFunctionComplexityThreshold(int threshold) {
-    this.maximumFunctionComplexityThreshold = threshold;
-  }
+	@Override
+	public void init() {
+		subscribeTo(LuaGrammar.FUNCTION, LuaGrammar.FUNCSTAT);
+		
+	}
+
+	@Override
+	public void leaveNode(AstNode node) {
+		SourceFunction function = (SourceFunction) getContext()
+				.peekSourceCode();
+	
+		int functionComplexity = ChecksHelper.getRecursiveMeasureInt(function,
+				LuaMetric.COMPLEXITY);
+		if (functionComplexity > maximumFunctionComplexityThreshold) {
+			String message = String
+					.format("Function has a complexity of %s which is greater than %s authorized.",
+							functionComplexity,
+							maximumFunctionComplexityThreshold);
+			createIssueWithCost(message, node, (double) functionComplexity
+					- maximumFunctionComplexityThreshold);
+		}
+	}
+
+	public void setMaximumFunctionComplexityThreshold(int threshold) {
+		this.maximumFunctionComplexityThreshold = threshold;
+	}
 
 }

@@ -1,6 +1,6 @@
 /*
  * SonarQube Lua Plugin
- * Copyright (C) 2013-2016 SonarSource SA
+ * Copyright (C) 2016-2016 SonarSource SA
  * mailto:contact AT sonarsource DOT com
  *
  * This program is free software; you can redistribute it and/or
@@ -19,26 +19,41 @@
  */
 package org.sonar.lua.checks;
 
+import java.io.File;
+
+import org.junit.Ignore;
 import org.junit.Test;
 import org.sonar.lua.LuaAstScanner;
-
 import org.sonar.squidbridge.api.SourceFile;
 import org.sonar.squidbridge.checks.CheckMessagesVerifier;
 
-import java.io.File;
-
 public class XPathCheckTest {
+
+  private XPathCheck check = new XPathCheck();
 
   @Test
   public void check() {
-    XPathCheck check = new XPathCheck();
-    check.xpathQuery = "//IDENTIFIER[string-length(@tokenValue) >= 10]";
-    check.message = "Avoid identifiers which are too long!";
+    check.xpathQuery = "//STATEMENT";
+    check.message = "Avoid statements :)";
 
     SourceFile file = LuaAstScanner.scanSingleFile(new File("src/test/resources/checks/xPath.lua"), check);
     CheckMessagesVerifier.verify(file.getCheckMessages())
-        .next().atLine(2).withMessage("Avoid identifiers which are too long!")
+        .next().atLine(2).withMessage("Avoid statements :)")
+        .next().atLine(3).withMessage("Avoid statements :)")
+        .next().atLine(4).withMessage("Avoid statements :)")
         .noMore();
+  }
+
+  @Test
+  public void parseError() {
+    check.xpathQuery = "//STATEMENT";
+
+    SourceFile file = LuaAstScanner.scanSingleFile(new File("src/test/resources/checks/xPath.lua"), check);
+    CheckMessagesVerifier.verify(file.getCheckMessages())
+    .next().atLine(2).withMessage("The XPath expression matches this piece of code")
+    .next().atLine(3).withMessage("The XPath expression matches this piece of code")
+    .next().atLine(4).withMessage("The XPath expression matches this piece of code")
+     .noMore();
   }
 
 }
