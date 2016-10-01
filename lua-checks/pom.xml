@@ -9,6 +9,7 @@
   </parent>
 
   <artifactId>lua-checks</artifactId>
+      <packaging>jar</packaging>
 
   <name>Lua :: Checks</name>
 
