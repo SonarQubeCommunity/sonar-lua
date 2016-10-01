@@ -17,8 +17,8 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-
 package org.sonar.plugins.lua.cobertura;
+
 import org.apache.commons.lang.StringUtils;
 import org.codehaus.staxmate.in.SMInputCursor;
 import org.slf4j.Logger;
@@ -31,7 +31,7 @@ import org.sonar.api.batch.sensor.coverage.CoverageType;
 import org.sonar.api.batch.sensor.coverage.NewCoverage;
 import org.sonar.api.utils.ParsingUtils;
 import org.sonar.api.utils.StaxParser;
-import org.sonar.plugins.lua.Lua;
+import org.sonar.plugins.lua.core.Lua;
 
 import javax.xml.stream.XMLStreamException;
 import java.io.File;
@@ -76,7 +76,7 @@ public class CoberturaReportParser {
       String fileName = clazz.getAttrValue("filename");
 
       InputFile inputFile;
-   // mxml files are not supported by the plugin
+      // mxml files are not supported by the plugin
       if (inputFileByFilename.containsKey(fileName)) {
         inputFile = inputFileByFilename.get(fileName);
       } else {
@@ -98,14 +98,13 @@ public class CoberturaReportParser {
             .ofType(CoverageType.UNIT)
         );
       } else {
-   
         SMInputCursor line = clazz.childElementCursor("lines").advance().childElementCursor("line");
         while (line.getNext() != null) {
           // advance
         }
       }
-    }}
-  
+    }
+  }
 
   private static void collectFileData(SMInputCursor clazz, NewCoverage newCoverage) throws XMLStreamException {
     SMInputCursor line = clazz.childElementCursor("lines").advance().childElementCursor("line");

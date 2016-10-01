@@ -1,6 +1,6 @@
 /*
  * SonarQube Lua Plugin
- * Copyright (C) 2016 SonarSource SA
+ * Copyright (C) 2013-2016 SonarSource SA
  * mailto:contact AT sonarsource DOT com
  *
  * This program is free software; you can redistribute it and/or
@@ -18,12 +18,13 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 package org.sonar.plugins.lua;
+
 import org.sonar.api.profiles.ProfileDefinition;
 import org.sonar.api.profiles.RulesProfile;
 import org.sonar.api.rules.RuleFinder;
 import org.sonar.api.utils.ValidationMessages;
 import org.sonar.lua.checks.CheckList;
-import org.sonar.plugins.lua.Lua;
+import org.sonar.plugins.lua.core.Lua;
 import org.sonar.squidbridge.annotations.AnnotationBasedProfileBuilder;
 
 public class LuaProfile extends ProfileDefinition {

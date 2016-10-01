@@ -17,23 +17,18 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-
 package org.sonar.plugins.lua;
-
-import java.util.List;
 
 import org.sonar.api.Plugin;
 import org.sonar.api.config.PropertyDefinition;
 import org.sonar.api.resources.Qualifiers;
-import org.sonar.plugins.lua.Lua;
 import org.sonar.plugins.lua.cobertura.CoberturaSensor;
-
-
+import org.sonar.plugins.lua.core.Lua;
 
 public class LuaPlugin implements Plugin {
 
-  public static final String FILE_SUFFIXES_KEY = "sonar.lua.file.suffixes";
-  public static final String COBERTURA_REPORT_PATH = "sonar.lua.cobertura.reportPath";
+  public static final String FILE_SUFFIXES_KEY = "sonar.flex.file.suffixes";
+  public static final String COBERTURA_REPORT_PATH = "sonar.flex.cobertura.reportPath";
 
   @Override
   public void define(Context context) {

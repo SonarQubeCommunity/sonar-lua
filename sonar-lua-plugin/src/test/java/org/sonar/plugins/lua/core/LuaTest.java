@@ -17,25 +17,28 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package org.sonar.plugins.lua;
+package org.sonar.plugins.lua.core;
 
-import org.sonar.api.server.rule.RulesDefinition;
-import org.sonar.lua.checks.CheckList;
-import org.sonar.plugins.lua.core.Lua;
-import org.sonar.squidbridge.annotations.AnnotationBasedRulesDefinition;
+import org.junit.Test;
+import org.sonar.api.config.Settings;
+import org.sonar.plugins.lua.LuaPlugin;
 
-public final class LuaRulesDefinition implements RulesDefinition {
+import static org.fest.assertions.Assertions.assertThat;
 
-  private static final String REPOSITORY_NAME = "SonarQube";
+public class LuaTest {
 
-  @Override
-  public void define(Context context) {
-    NewRepository repository = context
-      .createRepository(CheckList.REPOSITORY_KEY, Lua.KEY)
-      .setName(REPOSITORY_NAME);
+  @Test
+  public void testGetFileSuffixes() {
+    Settings settings = new Settings();
+   Lua lua = new Lua(settings);
 
-    new AnnotationBasedRulesDefinition(repository, Lua.KEY).addRuleClasses(false, CheckList.getChecks());
+    assertThat(lua.getFileSuffixes()).isEqualTo(new String[] {"lua"});
 
-    repository.done();
+    settings.setProperty(LuaPlugin.FILE_SUFFIXES_KEY, "");
+    assertThat(lua.getFileSuffixes()).isEqualTo(new String[] {"lua"});
+
+    settings.setProperty(LuaPlugin.FILE_SUFFIXES_KEY, "lua");
+    assertThat(lua.getFileSuffixes()).isEqualTo(new String[] {"lua"});
   }
+
 }

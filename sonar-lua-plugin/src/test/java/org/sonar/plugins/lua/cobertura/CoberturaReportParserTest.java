@@ -17,25 +17,23 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package org.sonar.plugins.lua;
+package org.sonar.plugins.lua.cobertura;
 
-import org.sonar.api.server.rule.RulesDefinition;
-import org.sonar.lua.checks.CheckList;
-import org.sonar.plugins.lua.core.Lua;
-import org.sonar.squidbridge.annotations.AnnotationBasedRulesDefinition;
+import org.junit.Ignore;
+import org.junit.Test;
+import org.sonar.api.batch.sensor.internal.SensorContextTester;
+import org.sonar.test.TestUtils;
 
-public final class LuaRulesDefinition implements RulesDefinition {
+import java.io.File;
 
-  private static final String REPOSITORY_NAME = "SonarQube";
+public class CoberturaReportParserTest {
+@Ignore
 
-  @Override
-  public void define(Context context) {
-    NewRepository repository = context
-      .createRepository(CheckList.REPOSITORY_KEY, Lua.KEY)
-      .setName(REPOSITORY_NAME);
-
-    new AnnotationBasedRulesDefinition(repository, Lua.KEY).addRuleClasses(false, CheckList.getChecks());
-
-    repository.done();
+  @Test(expected = IllegalStateException.class)
+  public void invalidXmlFile() throws Exception {
+    CoberturaReportParser.parseReport(
+      TestUtils.getResource("org/sonar/plugins/lua/cobertura/coverage-invalid.xml"),
+      SensorContextTester.create(new File("."))
+    );
   }
 }

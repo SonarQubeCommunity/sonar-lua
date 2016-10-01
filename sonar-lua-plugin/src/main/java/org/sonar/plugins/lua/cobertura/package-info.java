@@ -17,25 +17,5 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package org.sonar.plugins.lua;
-
-import org.sonar.api.server.rule.RulesDefinition;
-import org.sonar.lua.checks.CheckList;
-import org.sonar.plugins.lua.core.Lua;
-import org.sonar.squidbridge.annotations.AnnotationBasedRulesDefinition;
-
-public final class LuaRulesDefinition implements RulesDefinition {
-
-  private static final String REPOSITORY_NAME = "SonarQube";
-
-  @Override
-  public void define(Context context) {
-    NewRepository repository = context
-      .createRepository(CheckList.REPOSITORY_KEY, Lua.KEY)
-      .setName(REPOSITORY_NAME);
-
-    new AnnotationBasedRulesDefinition(repository, Lua.KEY).addRuleClasses(false, CheckList.getChecks());
-
-    repository.done();
-  }
-}
+@javax.annotation.ParametersAreNonnullByDefault
+package org.sonar.plugins.lua.cobertura;

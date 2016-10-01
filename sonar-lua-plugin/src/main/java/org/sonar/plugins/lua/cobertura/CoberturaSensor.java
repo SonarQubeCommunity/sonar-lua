@@ -27,7 +27,7 @@ import org.sonar.api.batch.sensor.Sensor;
 import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.batch.sensor.SensorDescriptor;
 import org.sonar.plugins.lua.LuaPlugin;
-import org.sonar.plugins.lua.Lua;
+import org.sonar.plugins.lua.core.Lua;
 
 import java.io.File;
 

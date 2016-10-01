@@ -18,6 +18,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 package org.sonar.plugins.lua;
+
 import com.google.common.collect.Sets;
 import com.sonar.sslr.api.AstNode;
 import com.sonar.sslr.api.GenericTokenType;
@@ -31,11 +32,9 @@ import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.batch.sensor.cpd.NewCpdTokens;
 import org.sonar.api.batch.sensor.highlighting.NewHighlighting;
 import org.sonar.api.batch.sensor.highlighting.TypeOfText;
+
 import org.sonar.lua.api.LuaKeyword;
-import org.sonar.lua.api.LuaPunctuator;
 import org.sonar.lua.api.LuaTokenType;
-import org.sonar.lua.grammar.LuaGrammar.Keyword;
-import org.sonar.lua.grammar.LuaGrammar.Punctuator;
 import org.sonar.squidbridge.SquidAstVisitor;
 import org.sonar.sslr.parser.LexerlessGrammar;
 
@@ -71,12 +70,13 @@ public class LuaTokensVisitor extends SquidAstVisitor<LexerlessGrammar> {
     cpdTokens.onFile(inputFile);
 
     Iterator<Token> iterator = lexer.lex(file).iterator();
-    // we currently use this hack to remove "import" directives
-    boolean importDirective = false;
+   
+
     while (iterator.hasNext()) {
       Token token = iterator.next();
       TokenType tokenType = token.getType();
-      if (!tokenType.equals(GenericTokenType.EOF)) {
+      
+         if (!tokenType.equals(GenericTokenType.EOF)) {
         TokenLocation tokenLocation = new TokenLocation(token);
         cpdTokens.addToken(tokenLocation.startLine(), tokenLocation.startCharacter(), tokenLocation.endLine(), tokenLocation.endCharacter(), getTokenImage(token));
       }

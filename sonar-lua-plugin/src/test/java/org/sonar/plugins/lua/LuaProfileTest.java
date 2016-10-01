@@ -27,7 +27,7 @@ import org.sonar.api.rules.Rule;
 import org.sonar.api.rules.RuleFinder;
 import org.sonar.api.utils.ValidationMessages;
 import org.sonar.lua.checks.CheckList;
-import org.sonar.plugins.lua.Lua;
+import org.sonar.plugins.lua.core.Lua;
 
 import static org.fest.assertions.Assertions.assertThat;
 import static org.mockito.Matchers.anyString;
@@ -35,7 +35,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class LuaProfileTest {
-
+  
   @Test
   public void should_create_sonar_way_profile() {
     ValidationMessages validation = ValidationMessages.create();
@@ -46,7 +46,7 @@ public class LuaProfileTest {
 
     assertThat(profile.getLanguage()).isEqualTo(Lua.KEY);
     assertThat(profile.getName()).isEqualTo(CheckList.SONAR_WAY_PROFILE);
-    assertThat(profile.getActiveRulesByRepository(CheckList.REPOSITORY_KEY)).hasSize(12);
+    assertThat(profile.getActiveRulesByRepository(CheckList.REPOSITORY_KEY)).hasSize(8);
     assertThat(validation.hasErrors()).isFalse();
   }
 

@@ -9,11 +9,10 @@
   </parent>
 
   <artifactId>sonar-lua-plugin</artifactId>
-  <packaging>pom</packaging>
+  <packaging>sonar-plugin</packaging>
 
   <name>Lua :: Sonar Plugin</name>
   <description>Enables scanning of Lua source files</description>
- 
 
   <properties>
     <sonar.pluginClass>org.sonar.plugins.lua.LuaPlugin</sonar.pluginClass>
@@ -93,8 +92,8 @@
             <configuration>
               <rules>
                 <requireFilesSize>
-                  <maxsize>1800000</maxsize>
-                  <minsize>1500000</minsize>
+                  <maxsize>1700000</maxsize>
+                  <minsize>1404762</minsize>
                   <files>
                     <file>${project.build.directory}/${project.build.finalName}.jar</file>
                   </files>
@@ -107,4 +106,3 @@
     </plugins>
   </build>
 </project>
-

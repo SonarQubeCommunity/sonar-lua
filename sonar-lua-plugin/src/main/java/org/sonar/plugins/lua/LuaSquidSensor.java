@@ -1,6 +1,6 @@
 /*
  * SonarQube Lua Plugin
- * Copyright (C) 2016 SonarSource SA
+ * Copyright (C) 2013-2016 SonarSource SA
  * mailto:contact AT sonarsource DOT com
  *
  * This program is free software; you can redistribute it and/or
@@ -17,7 +17,6 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-
 package org.sonar.plugins.lua;
 
 import com.google.common.collect.ImmutableList;
@@ -39,8 +38,9 @@ import org.sonar.lua.LuaAstScanner;
 import org.sonar.lua.LuaConfiguration;
 import org.sonar.lua.api.LuaMetric;
 import org.sonar.lua.checks.CheckList;
+
 import org.sonar.lua.metrics.FileLinesVisitor;
-import org.sonar.plugins.lua.Lua;
+import org.sonar.plugins.lua.core.Lua;
 import org.sonar.squidbridge.AstScanner;
 import org.sonar.squidbridge.SquidAstVisitor;
 import org.sonar.squidbridge.api.CheckMessage;
@@ -52,7 +52,6 @@ import org.sonar.squidbridge.checks.SquidCheck;
 import org.sonar.squidbridge.indexer.QueryByParent;
 import org.sonar.squidbridge.indexer.QueryByType;
 import org.sonar.sslr.parser.LexerlessGrammar;
-
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -79,7 +78,7 @@ public class LuaSquidSensor implements Sensor {
   @Override
   public void describe(SensorDescriptor descriptor) {
     descriptor
-      .name("Lua Squid Sensor")
+      .name("Lua")
       .onlyOnFileType(InputFile.Type.MAIN)
       .onlyOnLanguage(Lua.KEY);
   }
@@ -97,8 +96,8 @@ public class LuaSquidSensor implements Sensor {
     Iterable<java.io.File> files = fileSystem.files(
       predicates.and(
         predicates.hasType(InputFile.Type.MAIN),
-        predicates.hasLanguage(Lua.KEY)
-       // inputFile -> !inputFile.absolutePath().endsWith("mxml")
+        predicates.hasLanguage(Lua.KEY),
+        inputFile -> !inputFile.absolutePath().endsWith("mxml")
       ));
     scanner.scanFiles(ImmutableList.copyOf(files));
 
@@ -132,8 +131,7 @@ public class LuaSquidSensor implements Sensor {
       .forMetric(CoreMetrics.COMMENT_LINES)
       .withValue(squidFile.getInt(LuaMetric.COMMENT_LINES))
       .save();
-   
-      
+    
     context.<Integer>newMeasure()
       .on(inputFile)
       .forMetric(CoreMetrics.FUNCTIONS)
