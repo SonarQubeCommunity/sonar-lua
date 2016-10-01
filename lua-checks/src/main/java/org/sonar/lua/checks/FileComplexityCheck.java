@@ -1,6 +1,6 @@
 /*
  * SonarQube Lua Plugin
- * Copyright (C) 2016-2016 SonarSource SA
+ * Copyright (C) 2013-2016 SonarSource SA
  * mailto:contact AT sonarsource DOT com
  *
  * This program is free software; you can redistribute it and/or
@@ -20,9 +20,6 @@
 package org.sonar.lua.checks;
 
 import com.sonar.sslr.api.AstNode;
-//import com.sonar.sslr.api.Grammar;
-
-
 import org.sonar.check.Priority;
 import org.sonar.check.Rule;
 import org.sonar.lua.checks.Tags;

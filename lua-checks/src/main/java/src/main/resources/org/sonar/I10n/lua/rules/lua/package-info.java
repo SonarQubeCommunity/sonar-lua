@@ -17,32 +17,11 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package org.sonar.lua.checks;
-
-import org.junit.Test;
-import org.sonar.lua.LuaAstScanner;
-import org.sonar.squidbridge.api.SourceFile;
-import org.sonar.squidbridge.checks.CheckMessagesVerifier;
-import org.sonar.squidbridge.api.SourceFunction;
-
-import java.io.File;
-
-public class FunctionComplexityCheckTest {
-
-  @Test
-  public void test() {
-    FunctionComplexityCheck check = new FunctionComplexityCheck();
-    check.setMaximumFunctionComplexityThreshold(1);
-
-    SourceFile file = LuaAstScanner.scanSingleFile(new File("src/test/resources/checks/functionComplexity.lua"), check);
-
-    CheckMessagesVerifier.verify(file.getCheckMessages())
-       .next().atLine(1).withMessage("Function has a complexity of 8 which is greater than 1 authorized.")
-        
-        .noMore();
-  }
-
-}
-
-
-
+/**
+ * 
+ */
+/**
+ * @author admin
+ *
+ */
+package src.main.resources.org.sonar.I10n.lua.rules.lua;
