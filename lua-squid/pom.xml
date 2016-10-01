@@ -10,6 +10,7 @@
   </parent>
   
   <artifactId>lua-squid</artifactId>
+        <packaging>jar</packaging>
 <name>Lua::Squid</name>
   <url>http://maven.apache.org</url>
  
