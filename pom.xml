@@ -184,7 +184,7 @@
       <module>lua-checks</module>
         <module>sonar-lua-plugin</module>
      <module>sslr-lua-toolkit</module>
-   
+    <module>its</module>
     
     </modules>
 </project>
