@@ -8,8 +8,7 @@ addons:
   sonarqube: true
 
       
-install: true
-script: mvn verify -B -e -V
+
 
 cache:
   directories:
