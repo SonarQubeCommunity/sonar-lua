@@ -6,9 +6,7 @@ jdk:
 
 addons:
   sonarqube: true
-  apt:
-    packages:
-      - oracle-java8-installer
+
       
 install: true
 script: mvn verify -B -e -V
