@@ -9,7 +9,7 @@
   </parent>
 
   <artifactId>sslr-lua-toolkit</artifactId>
-  <packaging>pom</packaging>
+  <packaging>jar</packaging>
 
   <name>Lua :: SSLR Toolkit</name>
 
