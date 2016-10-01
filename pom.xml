@@ -181,10 +181,9 @@
 
 <modules>
      <module>lua-squid</module>
-   <module>sslr-lua-toolkit</module>
       <module>lua-checks</module>
-
         <module>sonar-lua-plugin</module>
+     <module>sslr-lua-toolkit</module>
    
     
     </modules>
