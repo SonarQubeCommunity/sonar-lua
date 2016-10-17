@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+
+<coverage line-rate="0.0" branch-rate="1.0" lines-covered="0" lines-valid="4" branches-covered="0" branches-valid="0" complexity="0.0" version="1.9.4" timestamp="1386168382336">
+  <sources>
+    <!-- Not retrieved nor used in cobertura parser -->
+    <source>/my/path/to/src/main/lua</source>
+  </sources>
+  <packages>
+    <package name="example" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+      <classes>
+        <class name="example.file" filename="example/file.lua" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+          <methods>
+          </methods>
+          <lines>
+            <line number="1" hits="0" branch="true" condition-coverage="50% (1/2)"/>
+            <line number="1" hits="0" branch="true"/>
+            <line number="7" hits="0" branch="false"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+      <package name="" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+          <classes>
+              <class name=".Main" filename="Main.mxml" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+                  <methods>
+                  </methods>
+                  <lines>
+                      <line number="13" hits="0" branch="false"/>
+                      <line number="17" hits="0" branch="false"/>
+                  </lines>
+              </class>
+          </classes>
+      </package>
+  </packages>
+</coverage>
+
