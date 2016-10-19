@@ -1,2 +1,0 @@
-all:
-	nosetests --with-xunit
