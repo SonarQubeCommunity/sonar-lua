@@ -27,15 +27,21 @@ import org.sonar.squidbridge.checks.CheckMessagesVerifier;
 
 public class LineLengthCheckTest {
 
-  @Test
-  public void test() {
-    LineLengthCheck check = new LineLengthCheck();
-    check.maximumLineLength = 30;
+	@Test
+	public void test() {
+		LineLengthCheck check = new LineLengthCheck();
+		check.maximumLineLength = 80;
 
-    SourceFile file = LuaAstScanner.scanSingleFile(new File("src/test/resources/checks/lineLength.lua"), check);
-    CheckMessagesVerifier.verify(file.getCheckMessages())
-        .next().atLine(1).withMessage("The line contains 82 characters which is greater than 30 authorized.")
-        .noMore();
-  }
+		SourceFile file = LuaAstScanner.scanSingleFile(new File(
+				"src/test/resources/checks/lineLength.lua"), check);
+		CheckMessagesVerifier
+				.verify(file.getCheckMessages())
+				
+				
+				.next().atLine(5).withMessage("Split this 94 characters long line (which is greater than 80 authorized).")
+				.next().atLine(29).withMessage("Split this 99 characters long line (which is greater than 80 authorized).")
+				 .next().atLine(30).withMessage("Split this 99 characters long line (which is greater than 80 authorized).")
+				.noMore();
+	}
 
 }
