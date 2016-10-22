@@ -35,7 +35,7 @@ public final class CheckList {
   public static List<Class> getChecks() {
     return ImmutableList.<Class>of(
       
-      XPathCheck.class,
+       XPathCheck.class,
       FunctionComplexityCheck.class,
       FunctionWithTooManyParametersCheck.class,
       FunctionNameCheck.class,
@@ -44,6 +44,7 @@ public final class CheckList {
       LineLengthCheck.class,
       FileComplexityCheck.class,
       TableWithTooManyFieldsCheck.class,
+      TooManyReturnCheck.class,
       FunctionCallComplexityCheck.class
      );
   }

@@ -32,7 +32,7 @@ import org.sonar.sslr.parser.LexerlessGrammar;
   key = "XPath",
   name = "XPath rule",
   priority = Priority.MAJOR)
-@ActivatedByDefault
+
 @RuleTemplate
 @NoSqale
 public class XPathCheck extends AbstractXPathCheck<LexerlessGrammar> {

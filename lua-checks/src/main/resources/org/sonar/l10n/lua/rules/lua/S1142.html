@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.47">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 12.0px 0.0px; line-height: 14.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 14.9px 0.0px; line-height: 22.0px; font: 18.0px Times; -webkit-text-stroke: #000000}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 12.0px Menlo; color: #333333; -webkit-text-stroke: #333333; background-color: #ffffff}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 12.0px Menlo; color: #333333; -webkit-text-stroke: #333333; background-color: #ffffff; min-height: 14.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px Monaco}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px Monaco; color: #931a68}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px Monaco; min-height: 15.0px}
+    span.s1 {font-kerning: none}
+    span.s2 {color: #931a68}
+    span.s3 {color: #000000}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">Having too many return statements in a function increases the function's essential complexity because the flow of execution is broken each time a return statement is encountered. This makes it harder to read and understand the logic of the function.</span></p>
+<p class="p2"><span class="s1"><b>Noncompliant Code Example</b></span></p>
+<p class="p3"><span class="s1">With the default threshold of 3</span></p>
+<p class="p4"><span class="s1"></span><br></p>
+<p class="p5"><span class="s2">function</span> myFunction() <span class="Apple-converted-space"> </span></p>
+<p class="p5"><span class="Apple-converted-space">  </span><span class="s2">if</span> (condition1) <span class="s2">then</span></p>
+<p class="p6"><span class="s3"><span class="Apple-converted-space">    </span></span>return<span class="s3"> </span>true</p>
+<p class="p5"><span class="Apple-converted-space">   </span><span class="s2">else</span><span class="Apple-converted-space"> </span></p>
+<p class="p5"><span class="Apple-converted-space">    </span><span class="s2">if</span> (condition2) <span class="s2">then</span></p>
+<p class="p6"><span class="s3"><span class="Apple-converted-space">      </span></span>return<span class="s3"> </span>false</p>
+<p class="p5"><span class="Apple-converted-space">     </span><span class="s2">else</span><span class="Apple-converted-space"> </span></p>
+<p class="p6"><span class="s3"><span class="Apple-converted-space">      </span></span>return<span class="s3"> </span>true</p>
+<p class="p7"><span class="Apple-converted-space">    </span></p>
+<p class="p6"><span class="s3"><span class="Apple-converted-space">  </span></span>end</p>
+<p class="p7"><br></p>
+<p class="p7"><br></p>
+<p class="p6">end</p>
+<p class="p6"><span class="s3"><span class="Apple-converted-space">  </span></span>return<span class="s3"> </span>false</p>
+<p class="p6">end</p>
+</body>
+</html>
