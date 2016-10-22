@@ -19,10 +19,21 @@
  */
 package org.sonar.lua.checks;
 
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.util.Collections;
+import java.util.List;
+
+import javax.annotation.Nullable;
+
+import com.google.common.io.Files;
 import com.sonar.sslr.api.AstAndTokenVisitor;
 import com.sonar.sslr.api.AstNode;
 import com.sonar.sslr.api.Token;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.sonar.lua.CharsetAwareVisitor;
 import org.sonar.lua.checks.utils.Tags;
 import org.sonar.check.Priority;
 import org.sonar.check.Rule;
@@ -41,10 +52,12 @@ import org.sonar.sslr.parser.LexerlessGrammar;
 )
 @ActivatedByDefault
 @SqaleConstantRemediation("1min")
-public class LineLengthCheck extends SquidCheck<LexerlessGrammar> implements AstAndTokenVisitor {
+public class LineLengthCheck extends SquidCheck<LexerlessGrammar> implements  CharsetAwareVisitor {
 
  // public static final String CHECK_KEY = "LineLength";
   private static final int DEFAULT_MAXIMUM_LINE_LENGTH = 80;
+  private static final Logger LOG = LoggerFactory.getLogger(LineLengthCheck.class);
+  private Charset charset;
 
   @RuleProperty(
     key = "maximumLineLength",
@@ -55,41 +68,36 @@ public class LineLengthCheck extends SquidCheck<LexerlessGrammar> implements Ast
   public int getMaximumLineLength() {
     return maximumLineLength;
   }
-  
+ 
   private Token previousToken;
 
-  @Override
-  public void visitFile(AstNode astNode) {
-    previousToken = null;
-  }
 
+@Override
+public void setCharset(Charset charset) {
+	this.charset = charset;
+}
   @Override
-  public void leaveFile(AstNode astNode) {
-    previousToken = null;
-  }
+  public void visitFile(@Nullable AstNode astNode) {
+    List<String> lines = Collections.emptyList();
 
-  @Override
-  public void visitToken(Token token) {
-    if (!token.isGeneratedCode()) {
-      if (previousToken != null && previousToken.getLine() != token.getLine()) {
-        // Note that AbstractLineLengthCheck doesn't support tokens which span multiple lines - see SONARPLUGINS-2025
-        String[] lines = previousToken.getValue().split("\r?\n|\r", -1);
-        int length = previousToken.getColumn();
-        for (int line = 0; line < lines.length; line++) {
-          length += lines[line].length();
-          if (length > getMaximumLineLength()) {
-            // Note that method from AbstractLineLengthCheck generates other message - see SONARPLUGINS-1809
-            getContext().createLineViolation(this,
-              "The line contains {0,number,integer} characters which is greater than {1,number,integer} authorized.",
-              previousToken.getLine(),
-              length,
-              getMaximumLineLength());
-          }
-          length = 0;
-        }
+    try {
+      lines = Files.readLines(getContext().getFile(), charset);
+    } catch (IOException e) {
+      LOG.error("Unable to execute rule \"LineLength\" for file {} because of error: {}",
+        getContext().getFile().getName(), e);
+    }
+    for (int i = 0; i < lines.size(); i++) {
+      String line = lines.get(i);
+      if (line.length() > maximumLineLength) {
+        getContext().createLineViolation(this, "Split this {0} characters long line (which is greater than {1} authorized).", i + 1, line.length(), maximumLineLength);
       }
-      previousToken = token;
     }
   }
+
+
+
+
+
+
 
 }
