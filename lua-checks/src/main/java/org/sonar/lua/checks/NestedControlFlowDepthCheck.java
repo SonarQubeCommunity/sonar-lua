@@ -77,7 +77,7 @@ public class NestedControlFlowDepthCheck extends SquidCheck<LexerlessGrammar> {
     if (!isElseIf(astNode)) {
       nestingLevel++;
       if (nestingLevel == getMax() + 1) {
-        getContext().createLineViolation(this, "Refactor this code to not nest more than {0} if/for/while/switch statements.", astNode, getMax());
+        getContext().createLineViolation(this, "Refactor this code to not nest more than {0} if/for/while/ statements.", astNode, getMax());
       }
     }
   }
