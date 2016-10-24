@@ -1,38 +1,29 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="1404.47">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 12.0px 0.0px; line-height: 14.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 12.0px Courier; color: #000000; -webkit-text-stroke: #000000}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 12.0px Courier; color: #000000; -webkit-text-stroke: #000000; min-height: 14.0px}
-    span.s1 {font-kerning: none}
-    span.s2 {font: 12.0px Courier; font-kerning: none}
-  </style>
-</head>
-<body>
-<p class="p1"><span class="s1">Nested </span><span class="s2">if</span><span class="s1">, </span><span class="s2">for</span><span class="s1">, </span><span class="s2">while</span><span class="s1">, </span><span class="s2">do while</span><span class="s1"><span class="Apple-converted-space">  </span>statements is a key ingredient for making what's known as "Spaghetti code".<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1">Such code is hard to read, refactor and therefore maintain.<span class="Apple-converted-space"> </span></span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; line-height: 22.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>Noncompliant Code Example</b></span></h2>
-<p class="p1"><span class="s1">With the default threshold of 3:</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">  </span>if (condition1)<span class="Apple-converted-space">                  </span>—- Compliant - depth = 1</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>if (condition2) <span class="Apple-converted-space">                </span>— Compliant - depth = 2</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">     </span></span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">      </span>for i = 0; i &lt; 10; i++ do<span class="Apple-converted-space">    </span>—Compliant - depth = 3, not exceeding the limit</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">       </span></span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>if (condition4)<span class="Apple-converted-space">              </span>Noncompliant - depth = 4</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">          </span>if (condition5) <span class="Apple-converted-space">          </span>Depth = 5, exceeding the limit, but issues are only reported on depth = 4</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">           </span></span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">          </span>end</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">          </span>return</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>end</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">      </span>end</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>end</span></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">  </span>end</span></p>
-</body>
-</html>
+<p>
+  Nested if, for, while, do while is a key ingredient for making what's known as "Spaghetti code".
+
+Such code is hard to read, refactor and therefore maintain..
+</p>
+
+<p>
+  Such code is hard to read, refactor and therefore maintain.
+</p>
+
+<h2>Noncompliant Code Example</h2>
+<p>With the default threshold of 3:</p>
+<pre>
+  if (condition1)                  —- Compliant - depth = 1
+    
+    if (condition2)                 — Compliant - depth = 2
+     
+      for i = 0; i < 10; i++ do    —Compliant - depth = 3, not exceeding the limit
+       
+        if (condition4)              Noncompliant - depth = 4
+          if (condition5)           Depth = 5, exceeding the limit, but issues are only reported on depth = 4
+           
+          end
+          return
+        end
+      end
+    end
+  end </pre>
+
