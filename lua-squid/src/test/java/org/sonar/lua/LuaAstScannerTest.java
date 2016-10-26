@@ -70,11 +70,7 @@ public class LuaAstScannerTest {
 	    assertThat(file.getInt(LuaMetric.FUNCTIONS)).isEqualTo(12);
 	  }
 	
-	 @Test
-	  public void block_statment() {
-	    SourceFile file = LuaAstScanner.scanSingleFile(new File("src/test/resources/metrics/blocks.lua"));
-	    assertThat(file.getInt(LuaMetric.BLOCKS)).isEqualTo(1);
-	  } 
+	
 
 	 @Test
 	  public void statments() {
