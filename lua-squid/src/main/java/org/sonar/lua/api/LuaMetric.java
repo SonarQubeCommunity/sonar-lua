@@ -29,7 +29,7 @@ public enum LuaMetric implements MetricDef {
   LINES,
   FILES,
   COMMENT_LINES,
-  BLOCKS,
+
   FUNCTIONS,
   STATEMENTS,
   TABLECONSTRUCTORS,
