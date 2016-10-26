@@ -90,25 +90,7 @@ public final class LuaAstScanner {
     builder.setCommentAnalyser(new LuaCommentAnalyser()); 
     
 
-    /* block */
     
-    builder.withSquidAstVisitor(new SourceCodeBuilderVisitor<LexerlessGrammar>(new SourceCodeBuilderCallback() {
-      private int seq = 0;
-
-      @Override
-      public SourceCode createSourceCode(SourceCode parentSourceCode, AstNode astNode) {
-        seq++;
-        SourceClass cls = new SourceClass("script block:" + seq);
-        cls.setStartAtLine(astNode.getTokenLine());
-        return cls;
-      }
-    },LuaGrammar.BLOCK));
-
-    builder.withSquidAstVisitor(CounterVisitor.<LexerlessGrammar>builder()
-      .setMetricDef(LuaMetric.BLOCKS)
-      .subscribeTo(LuaGrammar.BLOCK)
-      .build());
-
 //*table constructor*/
     builder.withSquidAstVisitor(new SourceCodeBuilderVisitor<LexerlessGrammar>(new SourceCodeBuilderCallback() {
         private int seq = 0;
