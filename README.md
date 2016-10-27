@@ -6,7 +6,6 @@ The plugin enables analysis of Lua projects within SonarQube.
 Steps to Analyze a Lua Project
 
 Install SonarQube Server.5.6+
-
 Install SonarQube Scanner.
 Install Lua Plugin (see Installing a Plugin for more details)
 Create a sonar-project.properties file at the root of your project.
@@ -20,7 +19,7 @@ This plugin enables analysis of:
  * Lua files
   
  within [SonarQube](http://www.sonarqube.org). It:
- * Computes metrics: lines of code,functions, class, statements, line complexity, etc.
+ * Computes metrics: lines of code,functions, table, statements,..., etc.
  * the next check will 
  * Performs more than [15 checks]
  * Provides the ability to write your own checks
