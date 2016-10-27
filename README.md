@@ -22,12 +22,10 @@ This plugin enables analysis of:
  within [SonarQube](http://www.sonarqube.org). It:
  * Computes metrics: lines of code,functions, class, statements, line complexity, etc.
  * the next check will 
- * Performs more than [15 checks](#available-checks)
+ * Performs more than [15 checks]
  * Provides the ability to write your own checks
 
-
-
-## Metrics
+## The metrics:
 
   LINES_OF_CODE,
   LINES,
@@ -44,14 +42,11 @@ The following elements increment the complexity by one:
 FUNCTION,
 FUNCSTAT,  
 FUNCTIONCALL,
-    
-     WHILE_STATEMENT,
-      FOR_STATEMENT,
-      IF_STATEMENT,
-      .DO_STATEMENT,
-     .REPEAT_STATEMENT,
-     LuaGrammar
- Available Checks
+WHILE_STATEMENT,
+FOR_STATEMENT,
+IF_STATEMENT,
+ DO_STATEMENT,
+       
 
 ## Custom Checks
 
