@@ -40,9 +40,9 @@ This plugin enables analysis of:
 
 ### Complexity
 The following elements increment the complexity by one:
-LuaGrammar.FUNCTION,
 
- FUNCSTAT,  
+FUNCTION,
+FUNCSTAT,  
 FUNCTIONCALL,
     
      WHILE_STATEMENT,
