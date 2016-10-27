@@ -1,8 +1,10 @@
 
 
-SonarQube CSS / Less Plugin
+Sonar Lua
+==========
 
-escription
+
+Description
 The plugin enables analysis of Lua projects within SonarQube.
 
 Steps to Analyze a Lua Project
