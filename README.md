@@ -5,6 +5,7 @@ Sonar Lua
 
 
 Description
+
 The plugin enables analysis of Lua projects within SonarQube.
 
 Steps to Analyze a Lua Project
