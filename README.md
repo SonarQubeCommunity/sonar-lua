@@ -47,10 +47,8 @@ FOR_STATEMENT,
 IF_STATEMENT,
  DO_STATEMENT,
        
-
-## Custom Checks
-
-XPathCheck.class,
+## Checks
+XPathCheck
 FunctionComplexityCheck.
 FunctionWithTooManyParametersCheck.
 TableComplexityCheck
