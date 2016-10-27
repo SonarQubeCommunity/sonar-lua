@@ -3,7 +3,7 @@
 Sonar Lua
 ==========
 
-
+Description
 Description
 
 The plugin enables analysis of Lua projects within SonarQube.
