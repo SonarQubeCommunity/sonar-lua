@@ -27,42 +27,58 @@ This plugin enables analysis of:
 ## The metrics:
  * Computes the following metrics: 
  
-  LINES_OF_CODE,
+ * LINES_OF_CODE,
   
-  LINES,
+  * LINES,
   
-  FILES,
+  * FILES,
   
-  COMMENT_LINES,
+  * COMMENT_LINES,
   
-  FUNCTIONS,
+  * FUNCTIONS,
   
-  STATEMENTS,
+  * STATEMENTS,
   
-  TABLECONSTRUCTORS,
+  * TABLECONSTRUCTORS,
   
-  COMPLEXITY;
+  * COMPLEXITY;
 
 ### Complexity
 The following elements increment the complexity by one:
 
- FUNCTION,
- FUNCSTAT,  
- FUNCTIONCALL,
- WHILE_STATEMENT,
- FOR_STATEMENT,
- IF_STATEMENT,
- DO_STATEMENT,
- TABLECONSTRUCTOR
+ * FUNCTION,
+ 
+ * FUNCSTAT,  
+ 
+  * FUNCTIONCALL,
+ 
+ * WHILE_STATEMENT,
+ 
+  * FOR_STATEMENT,
+ 
+ * IF_STATEMENT,
+ 
+ * DO_STATEMENT,
+ 
+ * TABLECONSTRUCTOR
        
 ## Checks
-XPathCheck
-FunctionComplexityCheck.
-FunctionWithTooManyParametersCheck.
-TableComplexityCheck
-NestedControlFlowDepthCheck
-LineLengthCheck
-FileComplexityCheck.
-TableWithTooManyFieldsCheck.
-FunctionCallComplexityCheck
+
+ * XPathCheck
+
+ * FunctionComplexityCheck.
+
+ * FunctionWithTooManyParametersCheck.
+
+ * TableComplexityCheck
+
+ * NestedControlFlowDepthCheck
+
+ * LineLengthCheck
+
+ * FileComplexityCheck.
+
+ * TableWithTooManyFieldsCheck.
+
+ *FunctionCallComplexityCheck
 
