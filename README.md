@@ -27,8 +27,6 @@ Follow the link provided at the end of the
 analysis to browse your project's quality in SonarQube UI
 
 
-
-
 ## The metrics:
 
   LINES_OF_CODE,
