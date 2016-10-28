@@ -27,7 +27,7 @@ This plugin enables analysis of:
 ## The metrics:
  * Computes the following metrics: 
  
- * LINES_OF_CODE,
+  * LINES_OF_CODE,
   
   * LINES,
   
