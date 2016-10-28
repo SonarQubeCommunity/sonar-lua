@@ -29,7 +29,7 @@ analysis to browse your project's quality in SonarQube UI
 
 ## The metrics:
 
-  LINES_OF_CODE,
+  *LINES_OF_CODE,
   LINES,
   FILES,
   COMMENT_LINES,
