@@ -1,5 +1,5 @@
-Sonar Lua
-==========
+SonarQube Lua Plugin
+====================
 
 ## Description
 This plugin enables analysis of Lua project within SonarQube:
