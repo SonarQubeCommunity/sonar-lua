@@ -3,24 +3,24 @@ Sonar Lua
 
 ## Description
 This plugin enables analysis of Lua project within SonarQube:
- * Lua files 5.1
- * Performs [15 Rules]
 
  
 ##Steps to Analyze a Lua Project
 
-* Install SonarQube Server.5.6+
+* Install SonarQube Server (see Setup and Upgrade for more details)
 
-* Install SonarQube Scanner.
+* Install SonarQube Scanner see(http://docs.sonarqube.org/display/SONAR/Setup+and+Upgrade).
 
-* Install Lua Plugin (see Installing a Plugin for more details).
+* Download Lua Plugin see "releases".
+
+* Install Lua Plugin see( http://docs.sonarqube.org/display/SONAR/Installing+a+Plugin)
 
 * Create a sonar-project.properties file at the root of your project.
 
 * Run sonar-scanner command from the project root dir.
 
 * Follow the link provided at the end of the 
-* analysis to browse your project's quality in SonarQube UI
+ analysis to browse your project's quality in SonarQube UI
 
 
 ## The metrics:
