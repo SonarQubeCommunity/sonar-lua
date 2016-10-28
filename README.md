@@ -5,7 +5,6 @@ Sonar Lua
 This plugin enables analysis of:
  * Lua files 5.1
  * within [SonarQube](http://www.sonarqube.org). It:
- * Computes metrics: lines of code,functions, table, statements,..., etc.
  * Performs more than [15 checks]
 
  
@@ -26,8 +25,9 @@ This plugin enables analysis of:
 
 
 ## The metrics:
-
-  *LINES_OF_CODE,
+ * Computes the following metrics: 
+  LINES_OF_CODE,
+  
   LINES,
   FILES,
   COMMENT_LINES,
