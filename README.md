@@ -5,7 +5,7 @@ Sonar Lua
 This plugin enables analysis of:
  * Lua files 5.1
  * within [SonarQube](http://www.sonarqube.org). It:
- * Performs more than [15 checks]
+ * Performs  than [15 checks]
 
  
 ##Steps to Analyze a Lua Project
