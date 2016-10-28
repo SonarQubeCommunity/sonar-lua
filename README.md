@@ -11,7 +11,7 @@ This plugin enables analysis of:
  * Provides the ability to write your own checks
  
  
- ##Steps to Analyze a Lua Project
+##Steps to Analyze a Lua Project
 
 Install SonarQube Server.5.6+
 
