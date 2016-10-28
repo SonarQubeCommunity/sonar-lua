@@ -2,9 +2,8 @@ Sonar Lua
 ==========
 
 ## Description
-This plugin enables analysis of:
+This plugin enables analysis of Lua project within SonarQube:
  * Lua files 5.1
- * within SonarQube.
  * Performs [15 Rules]
 
  
