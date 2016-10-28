@@ -41,13 +41,14 @@ analysis to browse your project's quality in SonarQube UI
 ### Complexity
 The following elements increment the complexity by one:
 
-FUNCTION,
-FUNCSTAT,  
-FUNCTIONCALL,
-WHILE_STATEMENT,
-FOR_STATEMENT,
-IF_STATEMENT,
+ FUNCTION,
+ FUNCSTAT,  
+ FUNCTIONCALL,
+ WHILE_STATEMENT,
+ FOR_STATEMENT,
+ IF_STATEMENT,
  DO_STATEMENT,
+ TABLECONSTRUCTOR
        
 ## Checks
 XPathCheck
