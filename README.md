@@ -50,11 +50,11 @@ The following elements increment the complexity by one:
  
  * FUNCSTAT,  
  
-  * FUNCTIONCALL,
+ * FUNCTIONCALL,
  
  * WHILE_STATEMENT,
  
-  * FOR_STATEMENT,
+ * FOR_STATEMENT,
  
  * IF_STATEMENT,
  
@@ -80,5 +80,5 @@ The following elements increment the complexity by one:
 
  * TableWithTooManyFieldsCheck.
 
- *FunctionCallComplexityCheck
+ * FunctionCallComplexityCheck
 
