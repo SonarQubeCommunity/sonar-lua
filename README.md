@@ -4,8 +4,8 @@ Sonar Lua
 ## Description
 This plugin enables analysis of:
  * Lua files 5.1
- * within [SonarQube](http://www.sonarqube.org). It:
- * Performs  than [15 checks]
+ * within SonarQube.
+ * Performs [15 Rules]
 
  
 ##Steps to Analyze a Lua Project
@@ -62,7 +62,7 @@ The following elements increment the complexity by one:
  
  * TABLECONSTRUCTOR
        
-## Checks
+## Rules
 
  * XPathCheck
 
