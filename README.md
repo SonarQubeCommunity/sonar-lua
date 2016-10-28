@@ -1,9 +1,17 @@
 Sonar Lua
 ==========
 
-The plugin enables analysis of Lua projects within SonarQube.
-
-Steps to Analyze a Lua Project
+## Description
+This plugin enables analysis of:
+ * Lua files
+ within [SonarQube](http://www.sonarqube.org). It:
+ * Computes metrics: lines of code,functions, table, statements,..., etc.
+ * the next check will 
+ * Performs more than [15 checks]
+ * Provides the ability to write your own checks
+ 
+ 
+ ##Steps to Analyze a Lua Project
 
 Install SonarQube Server.5.6+
 
@@ -19,15 +27,7 @@ Follow the link provided at the end of the
 analysis to browse your project's quality in SonarQube UI
 
 
-## Description
-This plugin enables analysis of:
- * Lua files
-  
- within [SonarQube](http://www.sonarqube.org). It:
- * Computes metrics: lines of code,functions, table, statements,..., etc.
- * the next check will 
- * Performs more than [15 checks]
- * Provides the ability to write your own checks
+
 
 ## The metrics:
 
