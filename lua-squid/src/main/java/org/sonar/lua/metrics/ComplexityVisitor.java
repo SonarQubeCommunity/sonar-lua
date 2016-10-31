@@ -34,10 +34,10 @@ public class ComplexityVisitor extends SquidAstVisitor<LexerlessGrammar> {
     subscribeTo(
       // Entry points
       LuaGrammar.FUNCTION,
-      //LuaGrammar.INDEX,
+   
       LuaGrammar.FUNCSTAT,  
       LuaGrammar.FUNCTIONCALL,
-      LuaGrammar.TABLECONSTRUCTOR,
+      
       // Branching nodes
       LuaGrammar.Keyword.AND,
       LuaGrammar.Keyword.OR,

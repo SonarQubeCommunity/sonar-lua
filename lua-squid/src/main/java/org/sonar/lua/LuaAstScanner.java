@@ -150,7 +150,9 @@ public final class LuaAstScanner {
           LuaGrammar.FOR_STATEMENT,
           LuaGrammar.DO_STATEMENT,
           LuaGrammar.WHILE_STATEMENT,
-          LuaGrammar.REPEAT_STATEMENT
+          LuaGrammar.REPEAT_STATEMENT,
+          LuaGrammar.Keyword.AND,
+          LuaGrammar.Keyword.OR
          // LuaGrammar.FUNCSTAT
           
  
