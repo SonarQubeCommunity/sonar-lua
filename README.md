@@ -59,8 +59,11 @@ The following elements increment the complexity by one:
  
  * DO_STATEMENT,
  
- * TABLECONSTRUCTOR
-       
+ * TABLECONSTRUCTOR(CLASS)
+ 
+ * AND
+ 
+ * OR
 ## Rules
 
  * XPathCheck
