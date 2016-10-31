@@ -59,8 +59,6 @@ The following elements increment the complexity by one:
  
  * DO_STATEMENT,
  
- * TABLECONSTRUCTOR
- 
  * AND
  
  * OR
