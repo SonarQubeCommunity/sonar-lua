@@ -37,8 +37,8 @@ import org.sonar.squidbridge.checks.ChecksHelper;
 @Rule(
   key = "FuncCaLL",
   
-  name = "FuncCaLL should not be too complex",
-  description = "max complexity.",
+  name = "FunctionCaLL should not be too complex",
+  description = "FunctionCaLL should not be too complex.",
   priority = Priority.MAJOR,
   tags = Tags.BRAIN_OVERLOAD )
 @ActivatedByDefault

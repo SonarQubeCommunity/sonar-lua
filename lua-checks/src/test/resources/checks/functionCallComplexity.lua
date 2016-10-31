@@ -30,25 +30,3 @@ create(function (a,b)--+1
  traceinfo()--++2
  
 
-add(add(),{56})
-
-local DoTheJob = function(ctx)
- 
-local modName = "SqlServerToVtype"
-
-      return  b
-end
-
-
-add(add())
-
-add ({a,b},curRow[fi.id],print())--1
-       print("foo", a)--2
-      
- 
- 
-test.traceinfo({strsub(sqlStatement)},curRow[fi.id],curRow[fiid])--++2
- 
- 
- 
- 

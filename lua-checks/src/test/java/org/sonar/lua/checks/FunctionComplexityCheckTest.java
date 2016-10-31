@@ -37,7 +37,7 @@ public class FunctionComplexityCheckTest {
     SourceFile file = LuaAstScanner.scanSingleFile(new File("src/test/resources/checks/functionComplexity.lua"), check);
 
     CheckMessagesVerifier.verify(file.getCheckMessages())
-       .next().atLine(1).withMessage("Function has a complexity of 8 which is greater than 1 authorized.")
+       .next().atLine(1).withMessage("Function has a complexity of 5 which is greater than 1 authorized.")
         
         .noMore();
   }

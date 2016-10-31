@@ -37,7 +37,7 @@ public class TableComplexityCheckTest {
     SourceFile file = LuaAstScanner.scanSingleFile(new File("src/test/resources/checks/tableComplexity.lua"), check);
 
     CheckMessagesVerifier.verify(file.getCheckMessages())
-       .next().atLine(1).withMessage("Table has a complexity of 5 which is greater than 1 authorized.")
+       .next().atLine(1).withMessage("Table has a complexity of 2 which is greater than 1 authorized.")
         
         .noMore();
   }

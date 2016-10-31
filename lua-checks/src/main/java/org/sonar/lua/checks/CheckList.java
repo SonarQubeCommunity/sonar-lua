@@ -38,11 +38,12 @@ public final class CheckList {
       XPathCheck.class,
       FunctionComplexityCheck.class,
       FunctionWithTooManyParametersCheck.class,
-      FunctionNameCheck.class,
+    
       TableComplexityCheck.class,
       NestedControlFlowDepthCheck.class,
       LineLengthCheck.class,
       FileComplexityCheck.class,
+ 
       TableWithTooManyFieldsCheck.class,
       FunctionCallComplexityCheck.class
      );

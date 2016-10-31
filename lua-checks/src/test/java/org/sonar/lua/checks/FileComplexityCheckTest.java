@@ -37,7 +37,7 @@ public class FileComplexityCheckTest {
 
     SourceFile file = LuaAstScanner.scanSingleFile(new File("src/test/resources/checks/fileComplexity.lua"), check);
     CheckMessagesVerifier.verify(file.getCheckMessages())
-        .next().withMessage("File has a complexity of 8 which is greater than 1 authorized.")
+        .next().withMessage("File has a complexity of 6 which is greater than 1 authorized.")
         .noMore();
   }
 
