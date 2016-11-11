@@ -59,7 +59,7 @@ public class TableComplexityCheck extends LuaCheck {
   @Override
   public void leaveNode(AstNode node) {
 	  SourceClass table = (SourceClass) getContext().peekSourceCode();
-    //int functionComplexity = function.getInt(LuaMetric.COMPLEXITY);
+ 
     int tableComplexity = ChecksHelper.getRecursiveMeasureInt(table, LuaMetric.COMPLEXITY);
     if (tableComplexity > maximumTableComplexityThreshold) {
       String message = String.format("Table has a complexity of %s which is greater than %s authorized.", tableComplexity, maximumTableComplexityThreshold);
