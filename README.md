@@ -59,6 +59,8 @@ The following elements increment the complexity by one:
  
  * DO_STATEMENT,
  
+ * Repeat_STATEMENT,
+ 
  * AND
  
  * OR
