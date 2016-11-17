@@ -21,7 +21,7 @@ package org.sonar.plugins.lua;
 
 import org.sonar.api.server.rule.RulesDefinition;
 import org.sonar.lua.checks.CheckList;
-//import org.sonar.plugins.lua.core.Flex;
+
 import org.sonar.squidbridge.annotations.AnnotationBasedRulesDefinition;
 
 public final class LuaRulesDefinition implements RulesDefinition {
