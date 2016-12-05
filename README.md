@@ -49,8 +49,6 @@ The following elements increment the complexity by one:
  
  * FUNCSTAT,  
  
- * FUNCTIONCALL,
- 
  * WHILE_STATEMENT,
  
  * FOR_STATEMENT,
@@ -59,28 +57,54 @@ The following elements increment the complexity by one:
  
  * DO_STATEMENT,
  
- * Repeat_STATEMENT,
+ * REPEAT_STATEMENT,
+ 
+ * TAILCALL
+ 
+ * BREAK
  
  * AND
  
  * OR
+ 
 ## Rules
 
- * XPathCheck
-
  * FunctionComplexityCheck.
-
- * FunctionWithTooManyParametersCheck.
-
+ 
+ * MethodComplexityCheck
+ 
+ * FunctionCallComplexityCheck
+ 
+ * FileComplexityCheck.
+ 
  * TableComplexityCheck
 
+ * FunctionWithTooManyParametersCheck.
+ 
+ * TableWithTooManyFieldsCheck.
+  
  * NestedControlFlowDepthCheck
+ 
+ * NestedFunctionsDepthCheck
+ 
+ * NestedTablesDepthCheck
+ 
+ * LocalFunctionNameCheck
 
  * LineLengthCheck
+ 
+ * TooManyLinesInFileCheck
+ 
+ * CommentRegularExpressionCheck
+ 
+ *  XPathCheck
+ 
+ 
+ 
 
- * FileComplexityCheck.
+ 
 
- * TableWithTooManyFieldsCheck.
 
- * FunctionCallComplexityCheck
+
+ 
 
