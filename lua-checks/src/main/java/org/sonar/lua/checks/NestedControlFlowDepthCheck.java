@@ -1,7 +1,7 @@
 /*
  * SonarQube Lua Plugin
- * Copyright (C) 2013-2016-2016 SonarSource SA
- * mailto:contact AT sonarsource DOT com
+ * Copyright (C) 2016 SonarSource SA
+ * mailto:contact AT DOT com
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -62,8 +62,8 @@ public class NestedControlFlowDepthCheck extends SquidCheck<LexerlessGrammar> {
       LuaGrammar.IF_STATEMENT,
       LuaGrammar.DO_STATEMENT,
       LuaGrammar.WHILE_STATEMENT,
-      LuaGrammar.FOR_STATEMENT,
-      LuaGrammar.TABLECONSTRUCTOR );
+      LuaGrammar.FOR_STATEMENT
+      );
     
   }
 
