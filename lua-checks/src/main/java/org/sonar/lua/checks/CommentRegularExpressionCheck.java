@@ -1,6 +1,6 @@
 /*
  * SonarQube Lua Plugin
-* Copyright (C) 2013-2016 Fati Ahmadi
+* Copyright (C) 2016 Fati Ahmadi
  * mailto:fati.ahmadi66 AT gmail.com
  *
  * This program is free software; you can redistribute it and/or
