@@ -5,7 +5,7 @@ SonarQube Lua Plugin
 This plugin enables analysis of Lua project within SonarQube:
 
  
-##Steps to Analyze a Lua Project
+Steps to Analyze a Lua Project
 
 * Install SonarQube Server (http://docs.sonarqube.org/display/SONAR/Setup+and+Upgrade)
 
