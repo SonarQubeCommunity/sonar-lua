@@ -1,5 +1,5 @@
  function func2(a, b, c)--Method
-  local function fun3()--violation
+  local function fun3()
    function func1()--Method
       function func1()--Method
       
