@@ -36,9 +36,9 @@ public class FunctionWithTooManyParametersCheckTest {
   public void defaults() {
     SourceFile file = LuaAstScanner.scanSingleFile(new File("src/test/resources/checks/functionWithTooManyParameters.lua"), check);
     CheckMessagesVerifier.verify(file.getCheckMessages())
-      .next().atLine(1).withMessage("This function has 8 parameters, which is greater than the 7 authorized.")
-      .next().atLine(7).withMessage("This function has 8 parameters, which is greater than the 7 authorized.")
-      .next().atLine(10).withMessage("This function has 9 parameters, which is greater than the 7 authorized.")
+      .next().atLine(1).withMessage("This function/method has 8 parameters, which is greater than the 7 authorized.")
+      .next().atLine(7).withMessage("This function/method has 8 parameters, which is greater than the 7 authorized.")
+      .next().atLine(10).withMessage("This function/method has 9 parameters, which is greater than the 7 authorized.")
       .noMore();
   }
   
@@ -48,9 +48,9 @@ public class FunctionWithTooManyParametersCheckTest {
 
     SourceFile file = LuaAstScanner.scanSingleFile(new File("src/test/resources/checks/functionWithTooManyParameters.lua"), check);
     CheckMessagesVerifier.verify(file.getCheckMessages())
-      .next().atLine(1).withMessage("This function has 8 parameters, which is greater than the 4 authorized.")
-      .next().atLine(7).withMessage("This function has 8 parameters, which is greater than the 4 authorized.")
-       .next().atLine(10).withMessage("This function has 9 parameters, which is greater than the 4 authorized.")
+      .next().atLine(1).withMessage("This function/method has 8 parameters, which is greater than the 4 authorized.")
+      .next().atLine(7).withMessage("This function/method has 8 parameters, which is greater than the 4 authorized.")
+       .next().atLine(10).withMessage("This function/method has 9 parameters, which is greater than the 4 authorized.")
       .noMore();
   }
 
