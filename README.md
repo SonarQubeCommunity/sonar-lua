@@ -45,19 +45,21 @@ Steps to Analyze a Lua Project
 ### Complexity
 The following elements increment the complexity by one:
 
- * FUNCTION,
+ * FUNCTION
  
- * FUNCSTAT,  
+ * FUNCSTAT 
  
- * WHILE_STATEMENT,
+ * WHILE_STATEMENT
  
- * FOR_STATEMENT,
+ * FOR_STATEMENT
  
- * IF_STATEMENT,
+ * IF_STATEMENT
  
- * DO_STATEMENT,
+ * DO_STATEMENT
  
- * REPEAT_STATEMENT,
+ * REPEAT_STATEMENT
+ 
+ * ELSEIF_STATEMENT
  
  * TAILCALL
  
@@ -72,6 +74,8 @@ The following elements increment the complexity by one:
  * FunctionComplexityCheck.
  
  * MethodComplexityCheck
+ 
+ * LocalFunctionComplexityCheck
  
  * FunctionCallComplexityCheck
  
