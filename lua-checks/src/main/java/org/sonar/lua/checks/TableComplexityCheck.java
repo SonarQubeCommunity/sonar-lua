@@ -52,7 +52,7 @@ public class TableComplexityCheck extends LuaCheck {
   @Override
   public void init() {
     subscribeTo(LuaGrammar.TABLECONSTRUCTOR );
-    //subscribeTo(LuaGrammar.Keyword.FUNCTION);
+   
   }
 
   @Override
