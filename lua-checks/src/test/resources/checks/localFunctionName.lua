@@ -7,8 +7,8 @@
        end 
        end
    end 
-   q=function ()--here start again
-      function other()--not included anymore
+   q=function ()
+      function other()
      end
       end
         end 
