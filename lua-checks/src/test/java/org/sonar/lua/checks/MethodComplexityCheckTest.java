@@ -1,7 +1,7 @@
 /*
  * SonarQube Lua Plugin
- * Copyright (C) 2013-2016-2016 SonarSource SA
- * mailto:contact AT sonarsource DOT com
+ * Copyright (C) 2016 
+ * mailto:fati.ahmadi66 AT gmail DOT com
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -41,7 +41,7 @@ public class MethodComplexityCheckTest {
         .next().atLine(3).withMessage("Method has a complexity of 2 which is greater than 0 authorized.") 
           .next().atLine(4).withMessage("Method has a complexity of 1 which is greater than 0 authorized.")
        .next().atLine(11).withMessage("Method has a complexity of 1 which is greater than 0 authorized.")
-       // .next().atLine(294).withMessage("Function has a complexity of 72 which is greater than 1 authorized.")
+
         .noMore();
   }
 
