@@ -36,7 +36,7 @@ import static com.sonar.sslr.impl.channel.RegexpChannelBuilder.regexp;
 
 /**
  * Provides a heuristic to guess whether a forward slash starts a regular expression.
- * http://stackoverflow.com/questions/7936593/finding-regular-expression-literals-in-a-string-of-javascript-code
+ * 
  */
 public class LuaRegularExpressionLiteralChannel extends Channel<Lexer> {
 
