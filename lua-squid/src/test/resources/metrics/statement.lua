@@ -1,13 +1,3 @@
-local function add (a,b)--2
-       print("foo", a)
-       return coroutine.yield(2*a)
-     end
-
-function add (a,b)--2
-       print("foo", a)
-       return coroutine.yield(2*a)
-     end
-
 x = 10
     local i = 1        -- local to the chunk
     
@@ -29,7 +19,7 @@ x = 10
       print(x)         --> 10  (the global one)
     end
     
-   --
+   --if statement
    if op == "+" then
       r = a + b
     elseif op == "-" then
@@ -43,23 +33,3 @@ x = 10
     end
    -- 
    
-  local found = nil
-    for i=1,a.n do
-      if a[i] == value then
-        found = i      -- save value of `i'
-        break
-      end
-    end
-    --for
- 
-    
-    for i,v in ipairs(a)  do
-        sum = sum + 1
-      end
-      
-      
-       repeat
-      line = os.read()
-    until line ~= ""
-    print(line)
-     --
