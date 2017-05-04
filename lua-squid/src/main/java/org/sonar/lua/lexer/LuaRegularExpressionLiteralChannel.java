@@ -126,16 +126,7 @@ public class LuaRegularExpressionLiteralChannel extends Channel<Lexer> {
   }
 
   
-  /**
-   * Returns true if a slash after given token starts a regular expression instead of div operator.
-   * <p>
-   * This fails on some valid but nonsensical JavaScript programs like
-   * {@code x = ++/foo/i} which is quite different than
-   * {@code x++/foo/i}, but is not known to fail on any known useful programs.
-   * </p>
-   *
-   * @param preceder non-whitespace, non comment token preceding the slash
-   */
+  
   @VisibleForTesting
   static boolean guessNextIsRegexp(String preceder) {
     if (WHOLE_TOKENS.contains(preceder)) {
