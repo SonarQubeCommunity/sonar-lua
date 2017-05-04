@@ -43,14 +43,14 @@
 </modules>
 
   <scm>
-    <connection>scm:git:git@github.com:SonarSource/sonar-lua.git</connection>
-    <developerConnection>scm:git:git@github.com:SonarSource/sonar-lua.git</developerConnection>
-    <url>https://github.com/SonarSource/sonar-lua</url>
+    <connection>scm:git:git@github.com:SonarQubeCommunity/sonar-lua.git</connection>
+    <developerConnection>scm:git:git@github.com:SonarQubeCommunity/sonar-lua.git</developerConnection>
+    <url>https://github.com/SonarQubeCommunity/sonar-lua/</url>
     <tag>HEAD</tag>
   </scm>
   <issueManagement>
     <system>JIRA</system>
-    <url>http://jira.sonarsource.com/browse/SONARLUA</url>
+    <url>https://github.com/SonarQubeCommunity/sonar-lua/issues</url>
   </issueManagement>
  
 
