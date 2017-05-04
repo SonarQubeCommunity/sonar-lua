@@ -81,6 +81,6 @@ public class LuaAstScannerTest {
 	 @Test
 	  public void complexity() {
 	    SourceFile file = LuaAstScanner.scanSingleFile(new File("src/test/resources/metrics/complexity.lua"));
-	    assertThat(file.getInt(LuaMetric.COMPLEXITY)).isEqualTo(12);
+	    assertThat(file.getInt(LuaMetric.COMPLEXITY)).isEqualTo(4);
 	  }
 }
