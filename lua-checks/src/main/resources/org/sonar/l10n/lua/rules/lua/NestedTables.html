@@ -1,0 +1,20 @@
+<p>
+ Accessing data in nested tables is too difficult. Such code is hard to read, refactor and therefore maintain..
+</p>
+
+<p>
+  Such code is hard to read, refactor and therefore maintain.
+</p>
+
+<h2>Noncompliant Code Example</h2>
+<p>With the default threshold of 3:</p>
+<pre>
+  polyline = {color="blue", thickness=2, npoints=4,    —- Compliant - depth = 1
+                 {x=0,                                -—NonCompliant - depth = 2
+                 {a,                                 
+                 {x=-10, y=0},
+                 {x=-10, y=1},
+                 {x=0,   y=1}
+               }
+ 
+</pre>

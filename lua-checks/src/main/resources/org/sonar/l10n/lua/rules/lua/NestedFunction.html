@@ -1,0 +1,23 @@
+<p>
+  Nested functions have impact on cyclomatic complexity.</p>
+
+<p>
+  Such code is hard to read, refactor and therefore maintain.
+</p>
+
+<h2>Noncompliant Code Example</h2>
+<p>With the default threshold of 2:</p>
+<pre>
+ local function a(x)  —- Compliant - depth = 1
+   function b(y)      —Non Compliant - depth = 2
+    c=function (z)
+      return z+z
+    end
+    return c(y)*c(y)
+  end
+  return b(x)+b(x)
+end
+
+
+  
+</pre>
