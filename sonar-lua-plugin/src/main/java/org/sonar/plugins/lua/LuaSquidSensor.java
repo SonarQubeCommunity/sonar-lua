@@ -1,7 +1,7 @@
 /*
  * SonarQube Lua Plugin
- * Copyright (C) 2013-2016-2016 SonarSource SA
- * mailto:contact AT sonarsource DOT com
+ * Copyright (C) 2016 
+ * mailto:fati.ahmadi66 AT gmail DOT com
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -116,6 +116,7 @@ public class LuaSquidSensor implements Sensor {
       saveMeasures(context, inputFile, squidFile);
       saveFunctionsComplexityDistribution(context, inputFile, squidFile);
       saveFilesComplexityDistribution(context, inputFile, squidFile);
+      visitors.add(new LuaTokensVisitor(context, LuaLexer.create(configuration)));
       saveViolations(context, inputFile, squidFile);
     }
   }
