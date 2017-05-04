@@ -6,28 +6,28 @@ local modName = "SqlServerToVtype"
 end
 --
 function add (a,b)--2
-       print("foo", a)--3
-       return coroutine.yield(2*a)--4
+       print("foo", a)
+       return coroutine.yield(2*a)
      end
 --   
 
-     co = coroutine.create(function (a,b)--5,6
+     co = coroutine.create(function (a,b)--3
       
            return b, "end"     
      end)
                   
- Print(test)--7
+ Print(test)
  
  
  --if statements   
     if i > 20 then
-    function add (a,b)--8
-       print("foo", a)--9
-       return coroutine.yield(2*a)--10
+    function add (a,b)--4
+       print("foo", a)
+       return coroutine.yield(2*a)
      end
-      local x          -- local to the "then" body
+      local x          
       x = 20
-      print(x + 2)--11
+      print(x + 2)
     else
-      print(x)         --> 12 (the global one)
+      print(x)        
     end
