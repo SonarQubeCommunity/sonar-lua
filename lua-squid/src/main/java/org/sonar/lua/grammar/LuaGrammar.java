@@ -42,6 +42,7 @@ public enum LuaGrammar implements GrammarRuleKey {
   LASTSTAT,
   FUNCNAME,
   FUNCSTAT,
+  LOCALFUNCSTAT,
   FUNCVAL,
   VARLIST,
   VAR,
@@ -231,7 +232,8 @@ public enum LuaGrammar implements GrammarRuleKey {
         TABLECONSTRUCTOR,
         STRING));
 
-    b.rule(FUNCSTAT).is(b.firstOf ( b.sequence(Keyword.FUNCTION, FUNCNAME, FUNCBODY), b.sequence(Keyword.LOCAL, Keyword.FUNCTION, NAME, FUNCBODY)));
+    b.rule(FUNCSTAT).is(b.sequence(Keyword.FUNCTION, FUNCNAME, FUNCBODY));
+		b.rule(LOCALFUNCSTAT).is(b.sequence(Keyword.LOCAL, Keyword.FUNCTION, NAME,FUNCBODY));
     b.rule(FUNCTION).is(Keyword.FUNCTION, FUNCBODY);
    
     b.rule(FUNCBODY).is(Punctuator.LPARENTHESES, b.optional(PARLIST), Punctuator.RPARENTHESES, BLOCK, Keyword.END);
