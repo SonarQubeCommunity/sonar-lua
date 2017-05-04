@@ -1,7 +1,7 @@
 /*
  * SonarQube Lua Plugin
- * Copyright (C) 2016 SonarSource SA
- * mailto:contact AT sonarsource DOT com
+ * Copyright (C) 2016 
+ * mailto:fati.ahmadi66 AT gmail DOT com
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -60,6 +60,7 @@ public enum LuaGrammar implements GrammarRuleKey {
   FIELDSEP,
   BINOP,
   UNOP,
+  TAILCALL,
 
   NAME,
   NUMBER,
@@ -164,8 +165,7 @@ public enum LuaGrammar implements GrammarRuleKey {
         IF_STATEMENT,
         FOR_STATEMENT,
         FUNCSTAT,
-       // b.sequence(Keyword.FUNCTION, FUNCNAME, FUNCBODY),
-       // b.sequence(Keyword.LOCAL, Keyword.FUNCTION, NAME, FUNCBODY),
+       
         b.sequence(Keyword.LOCAL, NAMELIST, b.optional(Punctuator.EQ, EXPLIST)),
         b.sequence(VARLIST, Punctuator.EQ, EXPLIST),
         FUNCTIONCALL));
@@ -184,6 +184,8 @@ public enum LuaGrammar implements GrammarRuleKey {
 
  
     b.rule(FUNCNAME).is(NAME, b.zeroOrMore(Punctuator.DOT, NAME), b.optional(Punctuator.COLON, NAME));
+      b.rule(TAILCALL).is( b.sequence(Keyword.RETURN, FUNCTIONCALL ));
+   
 
     b.rule(VARLIST).is(VAR, b.zeroOrMore(Punctuator.COMMA, VAR));
 
@@ -220,7 +222,7 @@ public enum LuaGrammar implements GrammarRuleKey {
     b.rule(VAR).is(b.firstOf(
         b.sequence(PREFIX, b.zeroOrMore(SUFFIX, b.next(SUFFIX)), INDEX),
         NAME));
-    b.rule(FUNCTIONCALL).is(PREFIX, b.zeroOrMore(SUFFIX, b.next(SUFFIX)), CALL);
+    b.rule(FUNCTIONCALL).is(PREFIX, b.zeroOrMore(SUFFIX, b.next(SUFFIX)),  b.optional(TAILCALL), CALL);
 
     b.rule(EXPLIST).is(EXP, b.zeroOrMore(Punctuator.COMMA, EXP));
 
