@@ -107,7 +107,24 @@ public final class LuaAstScanner {
         .subscribeTo(LuaGrammar.TABLECONSTRUCTOR)
         .build());
     
-    /* Functions*/
+    
+    builder.withSquidAstVisitor(new SourceCodeBuilderVisitor<LexerlessGrammar>(new SourceCodeBuilderCallback() {
+        private int seq = 0;
+
+        @Override
+        public SourceCode createSourceCode(SourceCode parentSourceCode, AstNode astNode) {
+          seq++;
+         
+          SourceFunction function = new SourceFunction("tailCall" + seq);
+          function.setStartAtLine(astNode.getTokenLine());
+          return function;
+        }
+      },LuaGrammar.TAILCALL));
+
+      builder.withSquidAstVisitor(CounterVisitor.<LexerlessGrammar>builder()
+        .setMetricDef(LuaMetric.TAILCALL)
+        .subscribeTo(LuaGrammar.TAILCALL)
+        .build());
     
       
 
