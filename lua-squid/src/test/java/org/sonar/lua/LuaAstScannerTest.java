@@ -67,7 +67,7 @@ public class LuaAstScannerTest {
 	 @Test
 	  public void functions() {
 	    SourceFile file = LuaAstScanner.scanSingleFile(new File("src/test/resources/metrics/function.lua"));
-	    assertThat(file.getInt(LuaMetric.FUNCTIONS)).isEqualTo(12);
+	    assertThat(file.getInt(LuaMetric.FUNCTIONS)).isEqualTo(4);
 	  }
 	
 	
@@ -75,7 +75,7 @@ public class LuaAstScannerTest {
 	 @Test
 	  public void statments() {
 	    SourceFile file = LuaAstScanner.scanSingleFile(new File("src/test/resources/metrics/statement.lua"));
-	    assertThat(file.getInt(LuaMetric.STATEMENTS)).isEqualTo(7);
+	    assertThat(file.getInt(LuaMetric.STATEMENTS)).isEqualTo(3);
 	  } 
 	
 	 @Test
