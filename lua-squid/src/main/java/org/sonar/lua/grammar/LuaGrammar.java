@@ -166,6 +166,7 @@ public enum LuaGrammar implements GrammarRuleKey {
         IF_STATEMENT,
         FOR_STATEMENT,
         FUNCSTAT,
+	LOCALFUNCSTAT,
        
         b.sequence(Keyword.LOCAL, NAMELIST, b.optional(Punctuator.EQ, EXPLIST)),
         b.sequence(VARLIST, Punctuator.EQ, EXPLIST),
