@@ -34,6 +34,7 @@ public enum LuaMetric implements MetricDef {
   FUNCTIONS,
   STATEMENTS,
   TABLECONSTRUCTORS,
+  TAILCALL,
   COMPLEXITY;
   
 
