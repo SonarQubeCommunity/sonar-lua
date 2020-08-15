@@ -55,7 +55,7 @@
     <license.title>SonarQube Lua Plugin</license.title>
     <maven.test.redirectTestOutputToFile>true</maven.test.redirectTestOutputToFile>
 
-    <sonar.version>5.6</sonar.version>
+    <sonar.version>5.6.7</sonar.version>
     <sslr.version>1.21</sslr.version>
     <logback.version>1.0.13</logback.version>
     <junit.version>4.12</junit.version>
